@@ -1,3 +1,11 @@
+## Kyx setup (GA402RK-L8190ws)
+import os
+
+# Force AMD GPU support for 6800S
+os.environ["HSA_OVERRIDE_GFX_VERSION"] = "10.3.0"
+# Fix the Linux windowing crash
+os.environ["QT_QPA_PLATFORM"] = "xcb"
+
 import cv2
 import numpy as np
 from tensorflow.keras.models import load_model
